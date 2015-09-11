@@ -1,1 +1,0 @@
-/Users/kotu/Google Drive/EmberJs/ember-data/tmp/funnel-input_base_path-4MumgWL1.tmp/0/

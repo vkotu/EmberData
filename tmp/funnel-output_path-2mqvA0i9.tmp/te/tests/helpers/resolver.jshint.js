@@ -1,1 +1,0 @@
-/Users/kotu/Google Drive/EmberJs/ember-data/tmp/jshinter-output_path-Ea72bdHN.tmp/helpers/resolver.jshint.js
