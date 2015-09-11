@@ -1,0 +1,1 @@
+/Users/kotu/Google Drive/EmberJs/ember-data/tmp/funnel-input_base_path-DqbUkjnR.tmp/0/bower_components/ember-cli-test-loader/test-loader.js
