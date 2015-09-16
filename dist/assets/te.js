@@ -104,6 +104,15 @@ define('te/initializers/export-application-global', ['exports', 'ember', 'te/con
   };
 
 });
+define('te/models/user', function () {
+
+	'use strict';
+
+	/**
+	 * Created by kotu on 9/16/15.
+	 */
+
+});
 define('te/router', ['exports', 'ember', 'te/config/environment'], function (exports, Ember, config) {
 
   'use strict';
@@ -112,7 +121,11 @@ define('te/router', ['exports', 'ember', 'te/config/environment'], function (exp
     location: config['default'].locationType
   });
 
-  Router.map(function () {});
+  Router.map(function () {
+    this.resource("users", function () {
+      this.route("user", { path: ':user_id' });
+    });
+  });
 
   exports['default'] = Router;
 
@@ -237,13 +250,23 @@ define('te/tests/helpers/start-app.jshint', function () {
   });
 
 });
+define('te/tests/models/user.jshint', function () {
+
+  'use strict';
+
+  QUnit.module('JSHint - models');
+  QUnit.test('models/user.js should pass jshint', function(assert) { 
+    assert.ok(true, 'models/user.js should pass jshint.'); 
+  });
+
+});
 define('te/tests/router.jshint', function () {
 
   'use strict';
 
   QUnit.module('JSHint - .');
   QUnit.test('router.js should pass jshint', function(assert) { 
-    assert.ok(false, 'router.js should pass jshint.\nrouter.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nrouter.js: line 2, col 1, \'import\' is only available in ES6 (use esnext option).\nrouter.js: line 11, col 1, \'export\' is only available in ES6 (use esnext option).\n\n3 errors'); 
+    assert.ok(false, 'router.js should pass jshint.\nrouter.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nrouter.js: line 2, col 1, \'import\' is only available in ES6 (use esnext option).\nrouter.js: line 10, col 41, Missing semicolon.\nrouter.js: line 14, col 1, \'export\' is only available in ES6 (use esnext option).\n\n4 errors'); 
   });
 
 });
@@ -292,7 +315,7 @@ catch(err) {
 if (runningTests) {
   require("te/tests/test-helper");
 } else {
-  require("te/app")["default"].create({"name":"te","version":"0.0.0+"});
+  require("te/app")["default"].create({"name":"te","version":"0.0.0+24cbf002"});
 }
 
 /* jshint ignore:end */
